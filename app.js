@@ -40,6 +40,7 @@ app.use(
                     "https://*.herokuapp.com",
                     "https://api.rss2json.com",
                     "https://*.rss2json.com",
+                    "https:",
                     // "ws:",
                 ],
                 baseUri: ["'self'"],
