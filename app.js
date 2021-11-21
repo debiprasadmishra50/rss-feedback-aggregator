@@ -46,6 +46,7 @@ app.use(
                     "https://*.cloudflare.com",
                     "https://polyfill.io",
                     "https://*.herokuapp.com",
+                    "unsafe-inline",
                     // "http:",
                     // "data:",
                 ],
@@ -106,6 +107,8 @@ app.get("/", function (req, res) {
 });
 
 console.log(`\n\n${__dirname}\n\n`);
+console.log(path.join(__dirname, "/client/build"));
+console.log(path.join(__dirname, "../client/build"));
 
 /* 
     For unknown routes
