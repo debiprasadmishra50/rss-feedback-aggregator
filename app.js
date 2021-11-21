@@ -105,7 +105,7 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/client/build", "index.html"));
 });
 
-console.log(`\n\n__dirname\n\n`);
+console.log(`\n\n${__dirname}\n\n`);
 
 /* 
     For unknown routes
