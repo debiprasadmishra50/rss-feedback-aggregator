@@ -12,8 +12,6 @@ const AppError = require("./utils/appError");
 
 const globalErrorHandler = require("./controllers/errorController");
 
-const movieRouter = require("./routes/movieRoutes");
-const dataRouter = require("./routes/dataRoutes");
 const rssRouter = require("./routes/rssRoutes");
 
 const app = express();
@@ -99,8 +97,6 @@ app.use((req, res, next) => {
 /* 
     Mounting Rounters as middleware
 */
-app.use("/api/v1/movies", movieRouter);
-app.use("/api/v1/data", dataRouter);
 app.use("/api/v1/rss", rssRouter);
 
 /* 
