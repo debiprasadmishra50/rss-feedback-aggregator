@@ -100,10 +100,12 @@ app.use((req, res, next) => {
 */
 app.use("/api/v1/rss", rssRouter);
 
-app.use(express.static(path.resolve(__dirname, "/client/build")));
+app.use(express.static(path.join(__dirname, "/client/build")));
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/client/build", "index.html"));
 });
+
+console.log(`\n\n__dirname\n\n`);
 
 /* 
     For unknown routes
