@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const rateLimit = require("express-rate-limit");
@@ -73,6 +74,7 @@ const limiter = rateLimit({
 app.use("/api", limiter);
 
 // reading url params and data from body to req.params and req.body
+app.use(express.static(path.resolve(__dirname, "/client/build")));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 app.use(express.json({ limit: "10kb" })); // for bodyParser
 app.use(cookieParser());
