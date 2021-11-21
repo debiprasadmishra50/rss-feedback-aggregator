@@ -27,11 +27,6 @@ if (process.env.NODE_ENV === "development") {
     app.use(morgan("dev")); // for logging in console
 }
 
-app.use((req, res, next) => {
-    res.locals.cspNonce = crypto.randomBytes(256).toString("hex");
-    next();
-});
-
 app.use(
     helmet({
         contentSecurityPolicy: {
@@ -52,8 +47,7 @@ app.use(
                     "https://*.cloudflare.com",
                     "https://polyfill.io",
                     "https://*.herokuapp.com",
-                    // "unsafe-inline",
-                    (req, res) => `'nonce-${res.locals.cspNonce}'`,
+                    "'unsafe-inline'",
                     // "http:",
                     // "data:",
                 ],
