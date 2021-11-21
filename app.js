@@ -42,11 +42,11 @@ app.use(
                 baseUri: ["'self'"],
                 scriptSrc: [
                     "self",
-                    "http://127.0.0.1:8000/",
-                    "https://*.cloudflare.com",
-                    "https://polyfill.io",
-                    "https://*.herokuapp.com",
-                    "unsafe-inline",
+                    // "http://127.0.0.1:8000/",
+                    // "https://*.cloudflare.com",
+                    // "https://polyfill.io",
+                    // "https://*.herokuapp.com",
+                    // "unsafe-inline",
                     // "http:",
                     // "data:",
                 ],
@@ -105,10 +105,6 @@ app.use(express.static(path.join(__dirname, "/client/build")));
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/client/build", "index.html"));
 });
-
-console.log(`\n\n${__dirname}\n\n`);
-console.log(path.join(__dirname, "/client/build"));
-console.log(path.join(__dirname, "../client/build"));
 
 /* 
     For unknown routes
