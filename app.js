@@ -26,39 +26,39 @@ if (process.env.NODE_ENV === "development") {
     app.use(morgan("dev")); // for logging in console
 }
 
-app.use(
-    helmet({
-        contentSecurityPolicy: {
-            useDefaults: true,
-            directives: {
-                defaultSrc: [
-                    "'self'",
-                    "https://polyfill.io",
-                    "https://*.cloudflare.com",
-                    "http://127.0.0.1:8000/",
-                    "https://*.herokuapp.com",
-                    // "ws:",
-                ],
-                baseUri: ["'self'"],
-                scriptSrc: [
-                    "self",
-                    // "http://127.0.0.1:8000/",
-                    // "https://*.cloudflare.com",
-                    // "https://polyfill.io",
-                    // "https://*.herokuapp.com",
-                    // "unsafe-inline",
-                    // "http:",
-                    // "data:",
-                ],
-                styleSrc: ["self", "https:", "http:", "unsafe-inline"],
-                imgSrc: ["'self'", "data:", "blob:"],
-                fontSrc: ["'self'", "https:", "data:"],
-                childSrc: ["'self'", "blob:"],
-                styleSrcAttr: ["'self'", "unsafe-inline", "http:"],
-            },
-        },
-    })
-); // For security HTTP headers
+// app.use(
+//     helmet({
+//         contentSecurityPolicy: {
+//             useDefaults: true,
+//             directives: {
+//                 defaultSrc: [
+//                     "'self'",
+//                     "https://polyfill.io",
+//                     "https://*.cloudflare.com",
+//                     "http://127.0.0.1:8000/",
+//                     "https://*.herokuapp.com",
+//                     // "ws:",
+//                 ],
+//                 baseUri: ["'self'"],
+//                 scriptSrc: [
+//                     "self",
+//                     // "http://127.0.0.1:8000/",
+//                     // "https://*.cloudflare.com",
+//                     // "https://polyfill.io",
+//                     // "https://*.herokuapp.com",
+//                     // "unsafe-inline",
+//                     // "http:",
+//                     // "data:",
+//                 ],
+//                 styleSrc: ["self", "https:", "http:", "unsafe-inline"],
+//                 imgSrc: ["'self'", "data:", "blob:"],
+//                 fontSrc: ["'self'", "https:", "data:"],
+//                 childSrc: ["'self'", "blob:"],
+//                 styleSrcAttr: ["'self'", "unsafe-inline", "http:"],
+//             },
+//         },
+//     })
+// ); // For security HTTP headers
 
 // Implementing CORS
 app.use(cors());
