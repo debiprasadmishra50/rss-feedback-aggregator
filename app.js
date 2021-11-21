@@ -47,6 +47,8 @@ app.use(
                     "https://*.cloudflare.com",
                     "https://polyfill.io",
                     "https://*.herokuapp.com",
+                    "https://api.rss2json.com",
+                    "https://*.rss2json.com",
                     "'unsafe-inline'",
                     // "http:",
                     // "data:",
