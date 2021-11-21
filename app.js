@@ -74,7 +74,6 @@ const limiter = rateLimit({
 app.use("/api", limiter);
 
 // reading url params and data from body to req.params and req.body
-app.use(express.static(path.resolve(__dirname, "/client/build")));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 app.use(express.json({ limit: "10kb" })); // for bodyParser
 app.use(cookieParser());
@@ -100,6 +99,11 @@ app.use((req, res, next) => {
     Mounting Rounters as middleware
 */
 app.use("/api/v1/rss", rssRouter);
+
+app.use(express.static(path.resolve(__dirname, "/client/build")));
+app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+});
 
 /* 
     For unknown routes
